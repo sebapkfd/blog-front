@@ -1,7 +1,6 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
-const Form = () => {
-    //Add confirm password
+const LogIn = () => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -11,12 +10,15 @@ const Form = () => {
         console.log(`${username} ${password}`)
         try {
             const body = {username, password}
-            const response = await fetch('http://localhost:5000/api/signup', {
+            const response = await fetch('http://localhost:5000/api/login', {
                 method: 'POST',
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(body)
             })
-            console.log(response)
+            const data = await response.json();
+            const {user, token} = data;
+            localStorage.setItem('userSession', JSON.stringify({user, token}))
+            console.log(user, token)
         } catch (err) {
             console.log(err)
         }
@@ -24,7 +26,7 @@ const Form = () => {
 
     return (
         <div>
-            <h1>Sign Up</h1>
+            <h1>Log In</h1>
             <form onSubmit={submitData}>
                 <label>Username</label>
                 <input
@@ -42,10 +44,10 @@ const Form = () => {
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                 />
-                <button>Sign Up</button>
+                <button>Log In</button>
             </form>
         </div>
     )
 }
 
-export default Form;
+export default LogIn;
