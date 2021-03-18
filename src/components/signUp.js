@@ -8,15 +8,13 @@ const Form = () => {
 
     const submitData = async (e) => {
         e.preventDefault();
-        console.log(`${username} ${password}`)
         try {
             const body = {username, password}
-            const response = await fetch('http://localhost:5000/api/signup', {
+            await fetch('http://localhost:5000/api/signup', {
                 method: 'POST',
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(body)
             })
-            console.log(response)
         } catch (err) {
             console.log(err)
         }

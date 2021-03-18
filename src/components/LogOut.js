@@ -7,8 +7,8 @@ const LogOut = () => {
         window.location.reload();
     }
 
-    const logOutButton = (localStorage.length > 0) ? 
-        <button onClick={closeSession}>Log Out</button> : null;
+    const logOutButton = (localStorage.length > 0) ? <button onClick={closeSession}>Log Out</button> : null ;
+    
     return (
         <div>
             {logOutButton}

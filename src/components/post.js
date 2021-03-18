@@ -11,7 +11,7 @@ const Post = () => {
             const user = JSON.parse(localStorage.getItem('userSession')).user._id;
             const timestamp = new Date().toLocaleString();
             const body = {title, text, user, timestamp, published: isPublished}
-            const response = await fetch('http://localhost:5000/api/posts', {
+            await fetch('http://localhost:5000/api/posts', {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json",
