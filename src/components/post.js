@@ -19,7 +19,7 @@ const Post = () => {
                 },
                 body: JSON.stringify(body)
             })
-            console.log(response)
+            window.location.reload();
         } catch (err) {
             console.log(err)
         }

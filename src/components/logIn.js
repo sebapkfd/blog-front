@@ -7,7 +7,6 @@ const LogIn = () => {
 
     const submitData = async (e) => {
         e.preventDefault();
-        console.log(`${username} ${password}`)
         try {
             const body = {username, password}
             const response = await fetch('http://localhost:5000/api/login', {
@@ -18,7 +17,7 @@ const LogIn = () => {
             const data = await response.json();
             const {user, token} = data;
             localStorage.setItem('userSession', JSON.stringify({user, token}))
-            console.log(user, token)
+            window.location.reload()
         } catch (err) {
             console.log(err)
         }

@@ -4,8 +4,11 @@ import LogIn from './components/logIn';
 import Post from './components/post';
 import PostList from './components/postList';
 import LogOut from './components/LogOut';
+import verifySession from './verify';
 
 function App() {
+  verifySession();
+
   let session = (localStorage.length > 0) ? <Post/> : (
   <div>
     <Form/>
