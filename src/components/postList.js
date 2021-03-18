@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import PostItem from './postItem';
 
 const PostList = () => {
     const [posts, setPosts] = useState([])
@@ -24,14 +25,7 @@ const PostList = () => {
     return (
         <div>
             {posts.map(post => {
-                return(
-                    <div key={post._id}>
-                        <h3>{post.title}</h3>
-                        <p>{post.timestamp}</p>
-                        <p>{post.text}</p>
-                        <p>{post.user.username}</p>
-                    </div>
-                )
+                return <PostItem key={post._id} post={post}/>
             })}
         </div>
     )
