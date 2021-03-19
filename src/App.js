@@ -1,28 +1,24 @@
 import './App.css';
-import Form from './components/signUp';
-import LogIn from './components/logIn';
-import Post from './components/post';
-import PostList from './components/postList';
-import LogOut from './components/LogOut';
+import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import verifySession from './verify';
+import Home from './components/Home';
+import PostPage from './components/PostPage'
 
 function App() {
   verifySession();
 
-  let session = (localStorage.length > 0) ? <Post/> : (
-  <div>
-    <Form/>
-    <LogIn/>
-  </div>
-  );
-  
-
   return (
     <div className="App">
-      <h1>Hello World</h1>
-      <LogOut/>
-      {session}
-      <PostList/>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path='/api/posts/:id'>
+            <PostPage/>
+          </Route>
+          <Route path="/"> 
+            <Home/>
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }

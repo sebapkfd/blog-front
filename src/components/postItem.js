@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const PostItem = (props) => {
     const {post} = props;
@@ -24,15 +25,18 @@ const PostItem = (props) => {
     const deleteButton = (post.user._id === userId) ? <button onClick={deletePost}>Delete</button> : null;
     const editButton = (post.user._id === userId) ? <button>Edit</button> : null;
 
+    //Maybe change the Link, check if it doesn't affect the buttons
     return(
-        <div>
-            <h3>{post.title}</h3>
-            <p>{post.timestamp}</p>
-            <p>{post.text}</p>
-            <p>{post.user.username}</p>
-            {deleteButton}
-            {editButton}
-        </div>
+        <Link to={`/api/posts/${post._id}`}>
+            <div>
+                <h3>{post.title}</h3>
+                <p>{post.timestamp}</p>
+                <p>{post.text}</p>
+                <p>{post.user.username}</p>
+                {deleteButton}
+                {editButton}
+            </div>
+        </Link>
     )
 }
 
