@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import verifySession from './verify';
 import Home from './components/Home';
 import PostPage from './components/PostPage'
+import EditPost from './components/EditPost';
 
 function App() {
   verifySession();
@@ -13,6 +14,9 @@ function App() {
         <Switch>
           <Route exact path='/api/posts/:id'>
             <PostPage/>
+          </Route>
+          <Route exact path='/api/posts/edit/:id'>
+            <EditPost/>
           </Route>
           <Route path="/"> 
             <Home/>
