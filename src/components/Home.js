@@ -4,6 +4,7 @@ import LogIn from './logIn';
 import Post from './post';
 import PostList from './postList';
 import LogOut from './LogOut';
+import { Link } from 'react-router-dom'
 
 const Home = () => {
     let session = (localStorage.length > 0) ? <Post/> : (
@@ -17,6 +18,9 @@ const Home = () => {
         <div>
             <h1>Hello World</h1>
             <LogOut/>
+            <Link to={`/api/unpublished`}>
+                <button>Unpublished Posts</button>
+            </Link>
             {session}
             <PostList/>
         </div>

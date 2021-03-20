@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react'
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 const EditPost = () => {
     const [post, setPost] = useState(null)
     const {id} = useParams();
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
+    const history = useHistory();
 
     const getPost = async () => {
         try {
@@ -34,7 +35,7 @@ const EditPost = () => {
                 },
                 body: JSON.stringify(body)
             })
-            window.location.reload();
+            history.push('/')
         } catch (err) {
             console.log(err)
         }

@@ -4,6 +4,7 @@ import verifySession from './verify';
 import Home from './components/Home';
 import PostPage from './components/PostPage'
 import EditPost from './components/EditPost';
+import UnpublishedPosts from './components/UnpublishedPosts';
 
 function App() {
   verifySession();
@@ -17,6 +18,9 @@ function App() {
           </Route>
           <Route exact path='/api/posts/edit/:id'>
             <EditPost/>
+          </Route>
+          <Route exact path='/api/unpublished'>
+            <UnpublishedPosts/>
           </Route>
           <Route path="/"> 
             <Home/>
