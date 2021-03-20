@@ -19,7 +19,7 @@ function App() {
           <Route exact path='/api/posts/edit/:id'>
             <EditPost/>
           </Route>
-          <Route exact path='/api/unpublished'>
+          <Route exact path='/api/unpublished/:id'>
             <UnpublishedPosts/>
           </Route>
           <Route path="/"> 

@@ -22,19 +22,16 @@ const PostItem = (props) => {
     }
 
     const userId = (localStorage.length > 0) ? JSON.parse(localStorage.getItem('userSession')).user._id : null;
-    //Check if user is the owner of the message
     const deleteButton = (post.user._id === userId) ? <button onClick={deletePost}>Delete</button> : null;
     const editButton = (post.user._id === userId) ? <button>Edit</button> : null;
 
     //Maybe change the Link, check if it doesn't affect the buttons
     return(
             <div>
-                <Link to={`/api/posts/${post._id}`}>
-                    <h3>{post.title}</h3>
-                    <p>{post.timestamp}</p>
-                    <p>{post.text}</p>
-                    <p>{post.user.username}</p>
-                </Link>
+                <h3>{post.title}</h3>
+                <p>{post.timestamp}</p>
+                <p>{post.text}</p>
+                <p>{post.user.username}</p>
                 {deleteButton}
                 <Link to={`/api/posts/edit/${post._id}`}>
                     {editButton}

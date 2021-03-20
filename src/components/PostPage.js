@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
+import PostItem from './postItem';
 
 const PostPage = () => {
     const [post, setPost] = useState(null)
@@ -25,17 +26,11 @@ const PostPage = () => {
     if(post) {
         return (
             <div>
-                <h1>XDDDD</h1>
-                <h3>{post.title}</h3>
-                <p>{post.timestamp}</p>
-                <p>{post.text}</p>
-                <p>{post.user.username}</p>
+                <PostItem post={post}/>
             </div>
         )   
     }
-    else {
-        return null
-    }
+    return null
     
 }
 

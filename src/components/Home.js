@@ -18,7 +18,7 @@ const Home = () => {
         <div>
             <h1>Hello World</h1>
             <LogOut/>
-            <Link to={`/api/unpublished`}>
+            <Link to={`/api/unpublished/:id`}>
                 <button>Unpublished Posts</button>
             </Link>
             {session}
