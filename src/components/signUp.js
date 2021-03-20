@@ -1,10 +1,12 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+import { useHistory} from 'react-router-dom';
 
-const Form = () => {
+const SignUp = () => {
     //Add confirm password
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const history = useHistory();
 
     const submitData = async (e) => {
         e.preventDefault();
@@ -15,6 +17,7 @@ const Form = () => {
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(body)
             })
+            history.push('/api/login')
         } catch (err) {
             console.log(err)
         }
@@ -46,4 +49,4 @@ const Form = () => {
     )
 }
 
-export default Form;
+export default SignUp;

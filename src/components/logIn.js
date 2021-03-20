@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
+import { useHistory} from 'react-router-dom';
 
 const LogIn = () => {
-
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const history = useHistory();
 
     const submitData = async (e) => {
         e.preventDefault();
@@ -17,7 +18,7 @@ const LogIn = () => {
             const data = await response.json();
             const {user, token} = data;
             localStorage.setItem('userSession', JSON.stringify({user, token}))
-            window.location.reload()
+            history.push('/')
         } catch (err) {
             console.log(err)
         }

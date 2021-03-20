@@ -25,6 +25,7 @@ const Post = () => {
         }
     }
 
+    //Add verification 
     return (
         <div>
             <h1>Publish a Post!</h1>

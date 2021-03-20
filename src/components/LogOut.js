@@ -10,9 +10,7 @@ const LogOut = () => {
     const logOutButton = (localStorage.length > 0) ? <button onClick={closeSession}>Log Out</button> : null ;
     
     return (
-        <div>
-            {logOutButton}
-        </div>
+        <div>{logOutButton}</div>
     )
 }
 
