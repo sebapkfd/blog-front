@@ -18,7 +18,8 @@ const LogIn = () => {
             const data = await response.json();
             const {user, token} = data;
             localStorage.setItem('userSession', JSON.stringify({user, token}))
-            history.push('/')
+            history.push('/');
+            window.location.reload();
         } catch (err) {
             console.log(err)
         }
