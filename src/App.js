@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import verifySession from './verify';
+import Navbar from './components/Navbar';
 import Home from './components/Home';
 import PostPage from './components/PostPage'
 import EditPost from './components/EditPost';
@@ -12,6 +13,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <Navbar/>
         <Switch>
           <Route exact path='/api/posts/:id'>
             <PostPage/>
