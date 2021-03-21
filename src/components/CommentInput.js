@@ -19,7 +19,7 @@ const CommentInput = () => {
                 },
                 body: JSON.stringify(body)
             })
-            // window.location.reload();
+            window.location.reload();
         } catch (err) {
             console.log(err)
         }

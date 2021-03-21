@@ -5,7 +5,10 @@ const CommentList = (props) => {
 
     return (
         <div>
-            <h5>{comments}</h5>
+            <h1>XDD</h1>
+            {comments.map(comment => {
+                return <h3>{comment.text}</h3>
+            })}
         </div>
     )
 }

@@ -2,9 +2,11 @@ import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import PostItem from './postItem';
 import CommentInput from './CommentInput';
+import CommentList from './CommentList';
 
 const PostPage = () => {
     const [post, setPost] = useState(null)
+    const [comments, setComments] = useState([])
     const {id} = useParams();
 
     const getPost = async () => {
@@ -13,8 +15,9 @@ const PostPage = () => {
                 method: 'GET',
                 headers: {"Content-Type": "application/json"}
             })
-            const data = await response.json();
-            setPost(data);
+            const {post_detail, post_comments} = await response.json();
+            setPost(post_detail)
+            setComments(post_comments)
         } catch (err) {
             console.log(err);
         }
@@ -29,6 +32,7 @@ const PostPage = () => {
             <div>
                 <PostItem post={post}/>
                 <CommentInput/>
+                <CommentList comments={comments}/>
             </div>
         )   
     }
