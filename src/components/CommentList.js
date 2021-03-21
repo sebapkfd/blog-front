@@ -1,13 +1,13 @@
-import React from 'react'
+import React from 'react';
+import CommentItem from './CommentItem';
 
 const CommentList = (props) => {
     const {comments} = props;
 
     return (
         <div>
-            <h1>XDD</h1>
             {comments.map(comment => {
-                return <h3>{comment.text}</h3>
+                return <CommentItem key={comment._id} comment={comment}/>
             })}
         </div>
     )
