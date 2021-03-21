@@ -14,10 +14,10 @@ const EditPost = () => {
                 method: 'GET',
                 headers: {"Content-Type": "application/json"}
             })
-            const data = await response.json();
-            setPost(data)
-            setTitle(data.title);
-            setText(data.text);
+            const {post_detail} = await response.json();
+            setPost(post_detail)
+            setTitle(post_detail.title);
+            setText(post_detail.text);
         } catch (err) {
             console.log(err);
         }

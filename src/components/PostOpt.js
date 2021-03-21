@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const PostOpt = (props) => {
-    const {post, deleteFunction} = props;
+    const {post, deleteFunction, refLink} = props;
 
     const handleDelete = (e) => {
         e.preventDefault();
@@ -16,7 +16,7 @@ const PostOpt = (props) => {
     return (
         <div>
             {deleteButton}
-            <Link to={`/api/posts/edit/${post._id}`}>
+            <Link to={refLink}>
                 {editButton}
             </Link>
         </div>

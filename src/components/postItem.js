@@ -30,7 +30,11 @@ const PostItem = (props) => {
                 <p>{post.timestamp}</p>
                 <p>{post.text}</p>
                 <p>{post.user.username}</p>
-                <PostOpt post={post} deleteFunction={deletePost}/>
+                <PostOpt 
+                    post={post} 
+                    deleteFunction={deletePost}
+                    refLink={`/api/posts/edit/${post._id}`}
+                />
             </div>
     )
 }
