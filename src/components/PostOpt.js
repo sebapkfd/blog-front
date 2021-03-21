@@ -16,9 +16,9 @@ const PostOpt = (props) => {
     return (
         <div>
             {deleteButton}
-                <Link to={`/api/posts/edit/${post._id}`}>
-                    {editButton}
-                </Link>
+            <Link to={`/api/posts/edit/${post._id}`}>
+                {editButton}
+            </Link>
         </div>
     )
 }
