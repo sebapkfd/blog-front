@@ -1,24 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import PostItem from './postItem';
+import { getPostList } from './Calls';
 
 const PostList = () => {
     const [posts, setPosts] = useState([])
 
-    const getData = async () => {
-        try {
-            const response = await fetch('http://localhost:5000/api/posts', {
-                method: 'GET',
-                headers: {"Content-Type": "application/json"},
-            })
-            const data = await response.json();
-            setPosts(Object.values(data))
-        } catch (error) {
-            console.log(error);
-        }        
-    }
-
-    useEffect(() => {
-        getData();
+    useEffect(async () => {
+        let data = await getPostList();
+        setPosts(data);
     }, [])
 
 
