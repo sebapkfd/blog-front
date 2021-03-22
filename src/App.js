@@ -1,14 +1,15 @@
 import './App.css';
-import { BrowserRouter, Switch, Route} from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import verifySession from './verify';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import PostPage from './components/PostPage'
 import EditPost from './components/EditPost';
-import UnpublishedPosts from './components/UnpublishedPosts';
 import SignUp from './components/signUp';
 import LogIn from './components/LogIn';
 import EditComment from './components/EditComment';
+import PostList from './components/postList';
+import { getUnpublishedList } from './components/Calls';
 
 function App() {
   verifySession();
@@ -31,7 +32,7 @@ function App() {
             <EditPost/>
           </Route>
           <Route exact path={'/api/unpublished/:id'}>
-            <UnpublishedPosts/>
+            <PostList getData={getUnpublishedList}/>
           </Route>
           <Route exact path={'/api/comments/edit/:id'}>
             <EditComment/>

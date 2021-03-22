@@ -1,13 +1,16 @@
 import React, {useState, useEffect} from 'react';
 import PostItem from './postItem';
-import { getPostList } from './Calls';
 
-const PostList = () => {
+const PostList = (props) => {
     const [posts, setPosts] = useState([])
+    const {getData} = props;
 
-    useEffect(async () => {
-        let data = await getPostList();
-        setPosts(data);
+    useEffect(() => {
+        async function fetchData() {
+            let data = await getData();
+            setPosts(data);
+        }
+        fetchData();
     }, [])
 
 
