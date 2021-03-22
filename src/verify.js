@@ -6,12 +6,15 @@ const verifySession = () => {
         try {
             let {exp} = jwt_decode(token)
             if (Date.now() >= exp * 1000) {
-                localStorage.clear()
+                localStorage.clear();
+                return false;
             }
+            return true;
         } catch (err) {
             console.log(err)   
         }
     }
+    return false;
 }
 
 export default verifySession;

@@ -14,7 +14,7 @@ const PostOpt = (props) => {
     const editButton = (post.user._id === userId) ? <button>Edit</button> : null;
 
     return (
-        <div>
+        <div className={'options'}>
             {deleteButton}
             <Link to={refLink}>
                 {editButton}

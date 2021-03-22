@@ -29,8 +29,8 @@ const PostPage = () => {
 
     if(post) {
         return (
-            <div>
-                <PostItem post={post}/>
+            <div className={'post-page'}>
+                <PostItem post={post} useLink={false}/>
                 {(post.published) ? <CommentInput/> : null}
                 <CommentList comments={comments}/>
             </div>

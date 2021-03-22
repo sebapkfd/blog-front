@@ -1,9 +1,11 @@
 import React from 'react';
 import PostOpt from './PostOpt';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const PostItem = (props) => {
-    const {post} = props;
+    const {post, useLink} = props;
+    const history = useHistory();
+
 
     const deletePost = async (e) => {
         e.preventDefault();
@@ -15,27 +17,33 @@ const PostItem = (props) => {
                     "Authorization": 'Bearer ' + JSON.parse(localStorage.getItem('userSession')).token
                 },
                 body: JSON.stringify({id: post._id})
-            })
-            window.location.reload();
+            });
+            (useLink) ? window.location.reload() : history.push('/');
         } catch (err) {
             console.log(err)
         }
     }
 
+    const title = (useLink) ? (
+        <Link to={`/api/posts/${post._id}`}>
+            <h3>{post.title}</h3>
+        </Link>
+    ) : (
+        <h3>{post.title}</h3>
+    );
+
     return(
-            <div>
-                <Link to={`/api/posts/${post._id}`}>
-                    <h3>{post.title}</h3>
-                </Link>
-                <p>{post.timestamp}</p>
-                <p>{post.text}</p>
-                <p>{post.user.username}</p>
-                <PostOpt 
-                    post={post} 
-                    deleteFunction={deletePost}
-                    refLink={`/api/posts/edit/${post._id}`}
-                />
-            </div>
+        <div className={'post-item'}>
+            {title}
+            <p>{post.timestamp}</p>
+            <p>{post.text}</p>
+            <p>{post.user.username}</p>
+            <PostOpt 
+                post={post} 
+                deleteFunction={deletePost}
+                refLink={`/api/posts/edit/${post._id}`}
+            />
+        </div>
     )
 }
 
