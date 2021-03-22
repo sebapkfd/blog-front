@@ -1,13 +1,13 @@
 import React from 'react'
-import Post from './post';
-import PostList from './postList';
-import { getPostList } from './Calls';
+import PostInput from './PostInput';
+import PostList from './PostList';
+import { getPostList } from './postCalls';
 
 const Home = () => {
 
     return (
         <div>
-            <Post/>
+            <PostInput/>
             <PostList getData={getPostList}/>
         </div>
     )

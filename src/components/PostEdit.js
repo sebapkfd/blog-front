@@ -1,48 +1,30 @@
 import React, {useState, useEffect} from 'react';
 import { useParams, useHistory } from 'react-router-dom';
+import { getPost, updatePost } from './postCalls';
 
-const EditPost = () => {
+const PostEdit = () => {
     const [post, setPost] = useState(null)
     const {id} = useParams();
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
     const history = useHistory();
 
-    const getPost = async () => {
-        try {
-            const response = await fetch('http://localhost:5000/api/posts/' + id, {
-                method: 'GET',
-                headers: {"Content-Type": "application/json"}
-            })
-            const {post_detail} = await response.json();
-            setPost(post_detail)
-            setTitle(post_detail.title);
-            setText(post_detail.text);
-        } catch (err) {
-            console.log(err);
-        }
+    const getData = async () => {
+        const post_detail = await getPost(id);
+        setPost(post_detail)
+        setTitle(post_detail.title);
+        setText(post_detail.text);
     };
 
     const submitData = async (e, isPublished) => {
         e.preventDefault();
-        try {
-            const body = {title, text, user: post.user, timestamp: post.timestamp, published: isPublished}
-            await fetch('http://localhost:5000/api/posts/edit/'+ id, {
-                method: 'PUT',
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": 'Bearer ' + JSON.parse(localStorage.getItem('userSession')).token
-                },
-                body: JSON.stringify(body)
-            })
-            history.push('/')
-        } catch (err) {
-            console.log(err)
-        }
+        const body = {title, text, user: post.user, timestamp: post.timestamp, published: isPublished}
+        await updatePost(body, id);
+        history.push('/');
     }
 
     useEffect(() => {
-        getPost(); // eslint-disable-next-line react-hooks/exhaustive-deps
+        getData(); // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     if(post) {
@@ -74,4 +56,4 @@ const EditPost = () => {
     }
 }
 
-export default EditPost;
+export default PostEdit;

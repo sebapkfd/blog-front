@@ -1,31 +1,19 @@
 import React, {useState} from 'react';
 import verifySession from '../verify';
+import { createPost } from './postCalls';
 
-const Post = () => {
+const PostInput = () => {
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
 
     const submitData = async (e, isPublished) => {
         e.preventDefault();
-        try {
-            const user = JSON.parse(localStorage.getItem('userSession')).user._id;
-            const timestamp = new Date().toLocaleString();
-            const body = {title, text, user, timestamp, published: isPublished}
-            await fetch('http://localhost:5000/api/posts', {
-                method: 'POST',
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": 'Bearer ' + JSON.parse(localStorage.getItem('userSession')).token
-                },
-                body: JSON.stringify(body)
-            })
-            window.location.reload();
-        } catch (err) {
-            console.log(err)
-        }
+        const user = JSON.parse(localStorage.getItem('userSession')).user._id;
+        const timestamp = new Date().toLocaleString();
+        const body = {title, text, user, timestamp, published: isPublished}
+        await createPost(body);
     }
 
-    //Add verification
     if (verifySession()) {
         return (
             <div>
@@ -56,4 +44,4 @@ const Post = () => {
     return null;
 }
 
-export default Post;
+export default PostInput;

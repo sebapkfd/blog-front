@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
-import PostItem from './postItem';
+import PostItem from './PostItem';
 import CommentInput from './CommentInput';
 import CommentList from './CommentList';
 

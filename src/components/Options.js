@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const PostOpt = (props) => {
+const Options = (props) => {
     const {post, deleteFunction, refLink} = props;
 
     const handleDelete = (e) => {
@@ -23,4 +23,4 @@ const PostOpt = (props) => {
     )
 }
 
-export default PostOpt;
+export default Options;

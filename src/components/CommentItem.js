@@ -1,5 +1,5 @@
 import React from 'react';
-import PostOpt from './PostOpt';
+import Options from './Options';
 
 const CommentItem = (props) => {
     const {comment} = props;
@@ -26,7 +26,7 @@ const CommentItem = (props) => {
             <h3>{comment.user.username}</h3>
             <h3>{comment.timestamp}</h3>
             <h3>{comment.text}</h3>
-            <PostOpt 
+            <Options 
                 post={comment} 
                 deleteFunction={deleteComment}
                 refLink={`/api/comments/edit/${comment._id}`}

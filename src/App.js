@@ -4,12 +4,12 @@ import verifySession from './verify';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import PostPage from './components/PostPage'
-import EditPost from './components/EditPost';
+import PostEdit from './components/PostEdit';
 import SignUp from './components/signUp';
 import LogIn from './components/LogIn';
 import EditComment from './components/EditComment';
-import PostList from './components/postList';
-import { getUnpublishedList } from './components/Calls';
+import PostList from './components/PostList';
+import { getUnpublishedList } from './components/postCalls';
 
 function App() {
   verifySession();
@@ -29,7 +29,7 @@ function App() {
             <PostPage/>
           </Route>
           <Route exact path={'/api/posts/edit/:id'}>
-            <EditPost/>
+            <PostEdit/>
           </Route>
           <Route exact path={'/api/unpublished/:id'}>
             <PostList getData={getUnpublishedList}/>

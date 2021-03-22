@@ -1,27 +1,16 @@
 import React from 'react';
-import PostOpt from './PostOpt';
+import Options from './Options';
 import { Link, useHistory } from 'react-router-dom';
+import { deletePost } from './postCalls';
 
 const PostItem = (props) => {
     const {post, useLink} = props;
     const history = useHistory();
 
-
-    const deletePost = async (e) => {
+    const deleteData = async (e) => {
         e.preventDefault();
-        try {
-            await fetch('http://localhost:5000/api/posts/:' + post._id, {
-                method: 'DELETE',
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": 'Bearer ' + JSON.parse(localStorage.getItem('userSession')).token
-                },
-                body: JSON.stringify({id: post._id})
-            });
-            (useLink) ? window.location.reload() : history.push('/');
-        } catch (err) {
-            console.log(err)
-        }
+        await deletePost(post._id);
+        (useLink) ? window.location.reload() : history.push('/');
     }
 
     const title = (useLink) ? (
@@ -38,9 +27,9 @@ const PostItem = (props) => {
             <p>{post.timestamp}</p>
             <p>{post.text}</p>
             <p>{post.user.username}</p>
-            <PostOpt 
+            <Options 
                 post={post} 
-                deleteFunction={deletePost}
+                deleteFunction={deleteData}
                 refLink={`/api/posts/edit/${post._id}`}
             />
         </div>
