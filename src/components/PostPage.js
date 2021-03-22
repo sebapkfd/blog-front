@@ -31,7 +31,7 @@ const PostPage = () => {
         return (
             <div>
                 <PostItem post={post}/>
-                <CommentInput/>
+                {(post.published) ? <CommentInput/> : null}
                 <CommentList comments={comments}/>
             </div>
         )   

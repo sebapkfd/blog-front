@@ -11,7 +11,7 @@ const CommentInput = () => {
             const user = JSON.parse(localStorage.getItem('userSession')).user._id;
             const timestamp = new Date().toLocaleString();
             const body = {user, timestamp, text, post: id}
-            await fetch('http://localhost:5000/api/posts/'+ id +'/comments', {
+            await fetch('http://localhost:5000/api/comments', {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json",
