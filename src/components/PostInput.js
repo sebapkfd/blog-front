@@ -25,6 +25,7 @@ const PostInput = () => {
                         name='title'
                         placeholder= 'Title'
                         value={title}
+                        required={true}
                         onChange={e => setTitle(e.target.value)}
                     />
                     <label>Text</label>
@@ -33,6 +34,8 @@ const PostInput = () => {
                         name='text'
                         placeholder= 'Text'
                         value={text}
+                        required={true}
+                        maxLength={200}
                         onChange={e => setText(e.target.value)}
                     />
                     <button onClick={(e) =>submitData(e, false)}>Save as Unpublished</button>

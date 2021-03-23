@@ -15,18 +15,23 @@ const PostItem = (props) => {
 
     const title = (useLink) ? (
         <Link to={`/api/posts/${post._id}`}>
-            <h3>{post.title}</h3>
+            <h2>{post.title}</h2>
         </Link>
     ) : (
-        <h3>{post.title}</h3>
+        <h2>{post.title}</h2>
     );
 
     return(
         <div className={'post-item'}>
-            {title}
-            <p>{post.timestamp}</p>
-            <p>{post.text}</p>
-            <p>{post.user.username}</p>
+            <div className='post-item__title'>
+                {title}
+            </div>
+            <div className='post-item__info'>
+                <p>Posted at {post.timestamp}, by {post.user.username}</p>
+            </div>
+            <div className='post-item__text'>
+                <p>{post.text}</p>
+            </div>
             <Options 
                 post={post} 
                 deleteFunction={deleteData}
