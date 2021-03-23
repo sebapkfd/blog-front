@@ -10,8 +10,8 @@ const PostEdit = () => {
     const history = useHistory();
 
     const getData = async () => {
-        const post_detail = await getPost(id);
-        setPost(post_detail)
+        const {post_detail} = await getPost(id);
+        setPost(post_detail);
         setTitle(post_detail.title);
         setText(post_detail.text);
     };

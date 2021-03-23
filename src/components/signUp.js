@@ -1,25 +1,19 @@
 import React, {useState} from 'react';
 import { useHistory} from 'react-router-dom';
+import { signUpCall } from './userCalls';
 
 const SignUp = () => {
-    //Add confirm password
-
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [confirm, setConfirm] = useState('');
     const history = useHistory();
 
     const submitData = async (e) => {
         e.preventDefault();
-        try {
+        if(password === confirm) {
             const body = {username, password}
-            await fetch('http://localhost:5000/api/signup', {
-                method: 'POST',
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify(body)
-            })
+            await signUpCall(body)    
             history.push('/api/login')
-        } catch (err) {
-            console.log(err)
         }
     }
 
@@ -33,6 +27,7 @@ const SignUp = () => {
                     name='username'
                     placeholder= 'username'
                     value={username}
+                    required={true}
                     onChange={e => setUsername(e.target.value)}
                 />
                 <label>Password</label>
@@ -41,7 +36,17 @@ const SignUp = () => {
                     name='password'
                     placeholder= 'password'
                     value={password}
+                    required={true}
                     onChange={e => setPassword(e.target.value)}
+                />
+                <label>Confirm password</label>
+                <input
+                    type='password'
+                    name='confirm'
+                    placeholder= 'Confirm password'
+                    value={confirm}
+                    required={true}
+                    onChange={e => setConfirm(e.target.value)}
                 />
                 <button>Sign Up</button>
             </form>

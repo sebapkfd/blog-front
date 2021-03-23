@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory} from 'react-router-dom';
+import { logInCall } from './userCalls';
 
 const LogIn = () => {
     const [username, setUsername] = useState('');
@@ -8,21 +9,10 @@ const LogIn = () => {
 
     const submitData = async (e) => {
         e.preventDefault();
-        try {
-            const body = {username, password}
-            const response = await fetch('http://localhost:5000/api/login', {
-                method: 'POST',
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify(body)
-            })
-            const data = await response.json();
-            const {user, token} = data;
-            localStorage.setItem('userSession', JSON.stringify({user, token}))
-            history.push('/');
-            window.location.reload();
-        } catch (err) {
-            console.log(err)
-        }
+        const body = {username, password}
+        await logInCall(body);
+        history.push('/');
+        window.location.reload();
     }
 
     return (
@@ -35,6 +25,7 @@ const LogIn = () => {
                     name='username'
                     placeholder= 'username'
                     value={username}
+                    required={true}
                     onChange={e => setUsername(e.target.value)}
                 />
                 <label>Password</label>
@@ -43,6 +34,7 @@ const LogIn = () => {
                     name='password'
                     placeholder= 'password'
                     value={password}
+                    required={true}
                     onChange={e => setPassword(e.target.value)}
                 />
                 <button>Log In</button>

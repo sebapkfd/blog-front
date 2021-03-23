@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import PostPage from './components/PostPage'
 import PostEdit from './components/PostEdit';
-import SignUp from './components/signUp';
+import SignUp from './components/SignUp';
 import LogIn from './components/LogIn';
 import EditComment from './components/EditComment';
 import PostList from './components/PostList';

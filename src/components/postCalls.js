@@ -36,8 +36,8 @@ export const getPost = async (id) => {
             method: 'GET',
             headers: {"Content-Type": "application/json"}
         })
-        const { post_detail } = await response.json();
-        return post_detail;
+        const data = await response.json();
+        return data;
     } catch (err) {
         console.log(err);
     }
