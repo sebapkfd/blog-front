@@ -6,14 +6,14 @@ import verifySession from '../verify';
 const Navbar = () => {
 
     let session = (verifySession()) ? (
-        <div>
+        <div className='session'>
             <Link to={`/api/unpublished/:id`}>
                 <button>Unpublished Posts</button>
             </Link>
             <LogOut/>
         </div>
     ) : (
-        <div>
+        <div className='session'>
             <Link to={`/api/signup`}>
                 <button>Sign Up</button>
             </Link>
@@ -24,7 +24,7 @@ const Navbar = () => {
     );
 
     return (
-        <div>
+        <div className='navbar'>
             <Link to={'/'}>
                 <button>Home</button>
             </Link>

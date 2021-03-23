@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 const LogOut = () => {
+    const history = useHistory();
 
     const closeSession = () => {
         localStorage.clear()
+        history.push('/');
         window.location.reload();
     }
 
