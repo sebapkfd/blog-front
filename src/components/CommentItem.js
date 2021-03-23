@@ -1,24 +1,14 @@
 import React from 'react';
 import Options from './Options';
+import { deleteComment } from './commentCalls';
 
 const CommentItem = (props) => {
     const {comment} = props;
 
-    const deleteComment = async (e) => {
+    const deleteData = async (e) => {
         e.preventDefault();
-        try {
-            await fetch('http://localhost:5000/api/comments/:' + comment._id, {
-                method: 'DELETE',
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": 'Bearer ' + JSON.parse(localStorage.getItem('userSession')).token
-                },
-                body: JSON.stringify({id: comment._id})
-            })
-            window.location.reload();
-        } catch (err) {
-            console.log(err);
-        }
+        await deleteComment(comment._id);
+        window.location.reload();
     }
 
     return (
@@ -28,7 +18,7 @@ const CommentItem = (props) => {
             <h3>{comment.text}</h3>
             <Options 
                 post={comment} 
-                deleteFunction={deleteComment}
+                deleteFunction={deleteData}
                 refLink={`/api/comments/edit/${comment._id}`}
             />
         </div>
