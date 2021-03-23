@@ -17,7 +17,7 @@ const PostInput = () => {
     if (verifySession()) {
         return (
             <div>
-                <h1>Publish a Post!</h1>
+                <h1>Share your thoughts!</h1>
                 <form >
                     <label>Title</label>
                     <input

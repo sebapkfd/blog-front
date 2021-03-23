@@ -15,7 +15,7 @@ const PostList = (props) => {
 
 
     return (
-        <div>
+        <div className='post-list'>
             {posts.map(post => {
                 return <PostItem key={post._id} post={post} useLink={true}/>
             })}

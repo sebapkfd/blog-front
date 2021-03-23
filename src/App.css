@@ -41,3 +41,18 @@ button:hover {
 a {
   text-decoration: none;
 }
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.post-item {
+  border: solid 1px black;
+  width: 40%;
+  margin: 15px 0;
+  padding: 10px;
+  border-radius: 10px;
+}
