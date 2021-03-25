@@ -27,10 +27,14 @@ const PostItem = (props) => {
                 {title}
             </div>
             <div className='post-item__info'>
-                <p>Posted at {post.timestamp}, by {post.user.username}</p>
+                <span>
+                    <p>Posted at {post.timestamp}, by {post.user.username}</p>
+                </span>
             </div>
             <div className='post-item__text'>
-                <p>{post.text}</p>
+                <span>
+                    <p> {post.text} </p>
+                </span>
             </div>
             <Options 
                 post={post} 

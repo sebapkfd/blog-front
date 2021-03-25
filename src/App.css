@@ -66,7 +66,7 @@ a {
   border: solid 0.5px var(--main-color);
   width: 40%;
   margin: 15px 0;
-  word-wrap: break-word;
+  /* word-wrap: break-word; */
 }
 
 .post-item__title {
@@ -81,15 +81,13 @@ a {
 
 .post-item__info, .post-item__text {
   font-size: 14px;
-  /* font-size: 0.9vw; */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-left: 20px;
+  padding: 0 20px;
 }
 
-.post-item__text {
-  /* font-size: 14px;
-  font-size: 1.3vw; */
-  word-wrap: break-word;
+p {
+  word-break: break-all;
+  text-align: left; 
 }
