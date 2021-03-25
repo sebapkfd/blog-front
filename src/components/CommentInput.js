@@ -22,6 +22,7 @@ const CommentInput = () => {
                         type='textarea'
                         name='comment'
                         placeholder= 'Comment'
+                        maxLength={200}
                         value={text}
                         onChange={e => setText(e.target.value)}
                     />

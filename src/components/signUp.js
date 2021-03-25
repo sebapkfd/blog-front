@@ -28,6 +28,7 @@ const SignUp = () => {
                     placeholder= 'username'
                     value={username}
                     required={true}
+                    maxLength={20}
                     onChange={e => setUsername(e.target.value)}
                 />
                 <label>Password</label>
@@ -37,6 +38,7 @@ const SignUp = () => {
                     placeholder= 'password'
                     value={password}
                     required={true}
+                    maxLength={50}
                     onChange={e => setPassword(e.target.value)}
                 />
                 <label>Confirm password</label>
@@ -46,6 +48,7 @@ const SignUp = () => {
                     placeholder= 'Confirm password'
                     value={confirm}
                     required={true}
+                    maxLength={50}
                     onChange={e => setConfirm(e.target.value)}
                 />
                 <button>Sign Up</button>

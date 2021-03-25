@@ -26,6 +26,7 @@ const LogIn = () => {
                     placeholder= 'username'
                     value={username}
                     required={true}
+                    maxLength={20}
                     onChange={e => setUsername(e.target.value)}
                 />
                 <label>Password</label>
@@ -35,6 +36,7 @@ const LogIn = () => {
                     placeholder= 'password'
                     value={password}
                     required={true}
+                    maxLength={50}
                     onChange={e => setPassword(e.target.value)}
                 />
                 <button>Log In</button>

@@ -26,11 +26,12 @@ const PostInput = () => {
                         placeholder= 'Title'
                         value={title}
                         required={true}
+                        maxLength={20}
                         onChange={e => setTitle(e.target.value)}
                     />
                     <label>Text</label>
                     <input
-                        type='text'
+                        type='textarea'
                         name='text'
                         placeholder= 'Text'
                         value={text}

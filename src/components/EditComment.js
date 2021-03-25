@@ -30,9 +30,10 @@ const EditComment = () => {
                 <form >
                     <label>Text</label>
                     <input
-                        type='text'
+                        type='textarea'
                         name='text'
                         defaultValue={comment.text}
+                        maxLength={200}
                         onChange={e => setText(e.target.value)}
                     />
                     <button onClick={(e) =>submitData(e)}>Save</button>

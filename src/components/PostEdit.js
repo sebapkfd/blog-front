@@ -36,13 +36,17 @@ const PostEdit = () => {
                         type='text'
                         name='title'
                         defaultValue={post.title}
+                        required={true}
+                        maxLength={20}
                         onChange={e => setTitle(e.target.value)}
                     />
                     <label>Text</label>
                     <input
-                        type='text'
+                        type='textarea'
                         name='text'
                         defaultValue={post.text}
+                        required={true}
+                        maxLength={200}
                         onChange={e => setText(e.target.value)}
                     />
                     <button onClick={(e) =>submitData(e, false)}>Save as Unpublished</button>
