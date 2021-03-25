@@ -89,5 +89,17 @@ a {
 
 p {
   word-break: break-all;
-  text-align: left; 
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.options {
+  margin-top: 14px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 20px 5px 0;
+}
+
+.options button {
+  margin: 0 10px;
 }
