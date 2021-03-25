@@ -15,11 +15,10 @@ const CommentInput = () => {
 
     if(verifySession()) {
         return (
-            <div>
+            <div className={'comment-input'}>
                 <form onSubmit={submitData}>
                     <label>Post a comment</label>
-                    <input
-                        type='textarea'
+                    <textarea 
                         name='comment'
                         placeholder= 'Comment'
                         maxLength={200}

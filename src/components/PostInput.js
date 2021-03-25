@@ -30,8 +30,7 @@ const PostInput = () => {
                         onChange={e => setTitle(e.target.value)}
                     />
                     <label>Text</label>
-                    <input
-                        type='textarea'
+                    <textarea 
                         name='text'
                         placeholder= 'Text'
                         value={text}

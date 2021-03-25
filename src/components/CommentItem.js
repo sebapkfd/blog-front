@@ -12,10 +12,18 @@ const CommentItem = (props) => {
     }
 
     return (
-        <div>
-            <h3>{comment.user.username}</h3>
-            <h3>{comment.timestamp}</h3>
-            <h3>{comment.text}</h3>
+        <div className={'comment-item'}>
+            <div className={'comment-item__info'}>
+                <span>
+                    <p>{comment.user.username}, at {comment.timestamp}</p>
+                </span>
+            </div>
+            <div className={'comment-item__text'}>
+                <span>
+                    <p>{comment.text}</p>
+                </span>
+            </div>
+            
             <Options 
                 post={comment} 
                 deleteFunction={deleteData}

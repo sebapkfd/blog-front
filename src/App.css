@@ -66,7 +66,6 @@ a {
   border: solid 0.5px var(--main-color);
   width: 40%;
   margin: 15px 0;
-  /* word-wrap: break-word; */
 }
 
 .post-item__title {
@@ -93,17 +92,6 @@ p {
   margin-bottom: 0;
 }
 
-.options {
-  margin-top: 14px;
-  display: flex;
-  justify-content: flex-end;
-  padding: 0 20px 5px 0;
-}
-
-.options button {
-  margin: 0 10px;
-}
-
 .session-form{
   display: flex;
   flex-direction: column;
@@ -124,4 +112,74 @@ p {
 
 .session-form button{
   margin-top: 5px;
+}
+
+.post-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comment-input {
+  width: 40%;
+  margin-bottom: 18px;
+}
+
+.comment-input form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comment-input button {
+  padding: 0 2em;
+}
+
+.comment-input textarea {
+  margin: 5px 0;
+  width: 100%;
+  height: 15vh;
+}
+
+.comment-list {
+  width: 40%;
+}
+
+.comment-item {
+  width: 100%;
+  border: solid 0.5px var(--main-color);
+  margin: 15px 0;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-item p {
+  padding: 0 20px;
+}
+
+.comment-item__info {
+  background-color: var(--main-color);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 2em;
+}
+
+.comment-item__info p {
+  color: var(--main-bg-color);
+  padding: 0 20px;
+  margin: 0;
+}
+
+.options {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0 20px 5px 0;
+}
+
+.options button {
+  margin: 0 10px;
 }

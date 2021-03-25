@@ -29,8 +29,7 @@ const EditComment = () => {
             <div>
                 <form >
                     <label>Text</label>
-                    <input
-                        type='textarea'
+                    <textarea 
                         name='text'
                         defaultValue={comment.text}
                         maxLength={200}
