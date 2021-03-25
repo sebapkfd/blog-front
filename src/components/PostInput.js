@@ -16,7 +16,7 @@ const PostInput = () => {
 
     if (verifySession()) {
         return (
-            <div>
+            <div className={'post-input'}>
                 <h1>Share your thoughts!</h1>
                 <form >
                     <label>Title</label>
@@ -38,8 +38,10 @@ const PostInput = () => {
                         maxLength={200}
                         onChange={e => setText(e.target.value)}
                     />
-                    <button onClick={(e) =>submitData(e, false)}>Save as Unpublished</button>
-                    <button onClick={(e)=> submitData(e, true)}>Publish post</button>
+                    <div>
+                        <button onClick={(e) =>submitData(e, false)}>Save as Unpublished</button>
+                        <button onClick={(e)=> submitData(e, true)}>Publish post</button>
+                    </div>
                 </form>
             </div>
         )
