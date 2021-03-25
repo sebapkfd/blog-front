@@ -18,7 +18,7 @@ const SignUp = () => {
     }
 
     return (
-        <div>
+        <div className={'session-form'}>
             <h1>Sign Up</h1>
             <form onSubmit={submitData}>
                 <label>Username</label>

@@ -16,7 +16,7 @@ const LogIn = () => {
     }
 
     return (
-        <div>
+        <div className={'session-form'}>
             <h1>Log In</h1>
             <form onSubmit={submitData}>
                 <label>Username</label>
