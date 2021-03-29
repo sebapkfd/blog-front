@@ -41,6 +41,7 @@ const PostInput = () => {
                     <div>
                         <button onClick={(e) =>submitData(e, false)}>Save as Unpublished</button>
                         <button onClick={(e)=> submitData(e, true)}>Publish post</button>
+                        {/* {text.length} */}
                     </div>
                 </form>
             </div>

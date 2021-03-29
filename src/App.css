@@ -114,7 +114,7 @@ p {
   margin-top: 5px;
 }
 
-.post-page {
+.post-page, .comment-page {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -143,15 +143,16 @@ p {
 
 .comment-list {
   width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .comment-item {
-  width: 100%;
+  width: 90%;
   border: solid 0.5px var(--main-color);
   margin: 15px 0;
   font-size: 14px;
-  display: flex;
-  flex-direction: column;
 }
 
 .comment-item p {
@@ -170,6 +171,10 @@ p {
   color: var(--main-bg-color);
   padding: 0 20px;
   margin: 0;
+}
+
+.comment-page .comment-input {
+  margin-top: 15px;
 }
 
 .options {
@@ -218,5 +223,4 @@ p {
 .post-input label {
   margin: 5px 0;
   font-weight: 600;
-  /* align-self: flex-start; */
 }

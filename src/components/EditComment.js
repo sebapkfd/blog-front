@@ -26,17 +26,20 @@ const EditComment = () => {
 
     if(comment) {
         return (
-            <div>
-                <form >
-                    <label>Text</label>
-                    <textarea 
-                        name='text'
-                        defaultValue={comment.text}
-                        maxLength={200}
-                        onChange={e => setText(e.target.value)}
-                    />
-                    <button onClick={(e) =>submitData(e)}>Save</button>
-                </form>
+            <div className={'comment-page'}>
+                <div className={'comment-input'}>
+                    <form >
+                        <label>Edit your comment</label>
+                        <textarea 
+                            name='text'
+                            defaultValue={comment.text}
+                            maxLength={200}
+                            onChange={e => setText(e.target.value)}
+                        />
+                        <button onClick={(e) =>submitData(e)}>Save</button>
+                    </form>
+                </div>
+
             </div>
         )
     }
