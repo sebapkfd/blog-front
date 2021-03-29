@@ -10,6 +10,7 @@ import LogIn from './components/LogIn';
 import EditComment from './components/EditComment';
 import PostList from './components/PostList';
 import { getUnpublishedList } from './components/postCalls';
+import Router from './components/Router'
 
 function App() {
   verifySession();
@@ -19,12 +20,8 @@ function App() {
       <BrowserRouter>
         <Navbar/>
         <Switch>
-          <Route exact path={'/api/signup'}>
-            <SignUp/>
-          </Route>
-          <Route exact path={'/api/login'}>
-            <LogIn/>
-          </Route>
+          <Router path={'/api/signup'} component={<SignUp/>} />
+          <Router path={'/api/login'} component={<LogIn/>} />
           <Route exact path={'/api/posts/:id'}>
             <PostPage/>
           </Route>
