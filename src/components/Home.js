@@ -6,7 +6,7 @@ import { getPostList } from './postCalls';
 const Home = () => {
 
     return (
-        <div>
+        <div className={'home-page'}>
             <PostInput/>
             <PostList getData={getPostList}/>
         </div>

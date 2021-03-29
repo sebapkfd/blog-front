@@ -224,3 +224,7 @@ p {
   margin: 5px 0;
   font-weight: 600;
 }
+
+#post-edit {
+  margin-top: 15px;
+}
