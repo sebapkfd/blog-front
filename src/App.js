@@ -20,20 +20,16 @@ function App() {
       <BrowserRouter>
         <Navbar/>
         <Switch>
-          <Router path={'/api/signup'} component={<SignUp/>} />
-          <Router path={'/api/login'} component={<LogIn/>} />
+          <Router path={'/api/signup'} component={<SignUp/>} logRequired={false}/>
+          <Router path={'/api/login'} component={<LogIn/>} logRequired={false}/>
           <Route exact path={'/api/posts/:id'}>
             <PostPage/>
           </Route>
-          <Route exact path={'/api/posts/edit/:id'}>
-            <PostEdit/>
-          </Route>
+          <Router path={'/api/posts/edit/:id'} component={<PostEdit/>} logRequired={true}/>
           <Route exact path={'/api/unpublished/:id'}>
             <PostList getData={getUnpublishedList}/>
           </Route>
-          <Route exact path={'/api/comments/edit/:id'}>
-            <EditComment/>
-          </Route>
+          <Router path={'/api/comments/edit/:id'} component={<EditComment/>} logRequired={true}/>
           <Route path="/"> 
             <Home/>
           </Route>

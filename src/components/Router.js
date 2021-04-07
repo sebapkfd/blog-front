@@ -3,11 +3,11 @@ import { Route, Redirect } from 'react-router-dom';
 import verifySession from '../verify';
 
 const Router = (props) => {
-    const { component, path} = props;
+    const { component, path, logRequired} = props;
 
     return (
         <Route exact path={path}>
-            {verifySession() ? <Redirect to='/'/> : component}
+            {verifySession() === logRequired ? component : <Redirect to='/'/>}
         </Route>
     )
 }
