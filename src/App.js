@@ -26,9 +26,7 @@ function App() {
             <PostPage/>
           </Route>
           <Router path={'/api/posts/edit/:id'} component={<PostEdit/>} logRequired={true}/>
-          <Route exact path={'/api/unpublished/:id'}>
-            <PostList getData={getUnpublishedList}/>
-          </Route>
+          <Router path={'/api/unpublished/:id'} component={<PostList getData={getUnpublishedList}/>} logRequired={true}/>
           <Router path={'/api/comments/edit/:id'} component={<EditComment/>} logRequired={true}/>
           <Route path="/"> 
             <Home/>
