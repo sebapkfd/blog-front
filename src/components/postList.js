@@ -8,6 +8,7 @@ const PostList = (props) => {
     useEffect(() => {
         async function fetchData() {
             let data = await getData();
+            data.sort((a,b) => new Date(b.timestamp) - new Date(a.timestamp))
             setPosts(data);
         }
         fetchData();// eslint-disable-next-line 

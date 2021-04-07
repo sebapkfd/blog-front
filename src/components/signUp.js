@@ -12,7 +12,7 @@ const SignUp = () => {
         e.preventDefault();
         if(password === confirm) {
             const body = {username, password}
-            await signUpCall(body)    
+            await signUpCall(body)
             history.push('/api/login')
         }
     }
