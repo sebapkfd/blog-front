@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom';
-import verifySession from '../verify';
+import verifySession from '../functions/verify';
 
 const Router = (props) => {
     const { component, path, logRequired} = props;

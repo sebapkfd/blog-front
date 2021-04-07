@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory} from 'react-router-dom';
-import { logInCall } from './userCalls';
+import { logInCall } from '../functions/userCalls';
 
 const LogIn = () => {
     const [username, setUsername] = useState('');

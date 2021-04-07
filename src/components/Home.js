@@ -1,7 +1,7 @@
 import React from 'react'
 import PostInput from './PostInput';
 import PostList from './PostList';
-import { getPostList } from './postCalls';
+import { getPostList } from '../functions/postCalls';
 
 const Home = () => {
 

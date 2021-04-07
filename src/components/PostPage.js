@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import PostItem from './PostItem';
 import CommentInput from './CommentInput';
 import CommentList from './CommentList';
-import { getPost } from './postCalls';
+import { getPost } from '../functions/postCalls';
 
 const PostPage = () => {
     const [post, setPost] = useState(null)

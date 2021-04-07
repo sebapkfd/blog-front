@@ -1,7 +1,7 @@
 import React from 'react';
 import Options from './Options';
 import { Link, useHistory } from 'react-router-dom';
-import { deletePost } from './postCalls';
+import { deletePost } from '../functions/postCalls';
 
 const PostItem = (props) => {
     const {post, useLink} = props;

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { useParams, useHistory } from 'react-router-dom';
-import { getPost, updatePost } from './postCalls';
+import { getPost, updatePost } from '../functions/postCalls';
 
 const PostEdit = () => {
     const [post, setPost] = useState(null)

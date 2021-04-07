@@ -1,6 +1,6 @@
 import React from 'react';
 import Options from './Options';
-import { deleteComment } from './commentCalls';
+import { deleteComment } from '../functions/commentCalls';
 
 const CommentItem = (props) => {
     const {comment} = props;

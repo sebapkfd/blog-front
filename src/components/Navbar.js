@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LogOut from './LogOut';
-import verifySession from '../verify';
+import verifySession from '../functions/verify';
 
 const Navbar = () => {
 

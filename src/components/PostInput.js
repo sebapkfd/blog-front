@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import verifySession from '../verify';
-import { createPost } from './postCalls';
+import verifySession from '../functions/verify';
+import { createPost } from '../functions/postCalls';
 
 const PostInput = () => {
     const [title, setTitle] = useState('');

@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import verifySession from './verify';
+import verifySession from './functions/verify';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import PostPage from './components/PostPage'
@@ -9,7 +9,7 @@ import SignUp from './components/SignUp';
 import LogIn from './components/LogIn';
 import EditComment from './components/EditComment';
 import PostList from './components/PostList';
-import { getUnpublishedList } from './components/postCalls';
+import { getUnpublishedList } from './functions/postCalls';
 import Router from './components/Router'
 
 function App() {

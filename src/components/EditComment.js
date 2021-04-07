@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { useParams, useHistory } from 'react-router-dom';
-import { updateComment, getComment } from './commentCalls';
+import { updateComment, getComment } from '../functions/commentCalls';
 
 const EditComment = () => {
     const [comment, setComment] = useState(null)

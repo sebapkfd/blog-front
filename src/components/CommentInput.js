@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import verifySession from '../verify';
-import { createComment } from './commentCalls';
+import verifySession from '../functions/verify';
+import { createComment } from '../functions/commentCalls';
 
 const CommentInput = () => {
     const [text, setText] = useState('');
