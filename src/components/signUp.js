@@ -13,7 +13,7 @@ const SignUp = () => {
         if(password === confirm) {
             const body = {username, password}
             await signUpCall(body)
-            history.push('/api/login')
+            history.push('/blog-front/login')
         }
     }
 

@@ -6,7 +6,7 @@ const LogOut = () => {
 
     const closeSession = () => {
         localStorage.clear()
-        history.push('/');
+        history.push('/blog-front/');
         window.location.reload();
     }
 

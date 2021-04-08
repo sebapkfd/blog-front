@@ -20,15 +20,15 @@ function App() {
       <BrowserRouter>
         <Navbar/>
         <Switch>
-          <Router path={'/api/signup'} component={<SignUp/>} logRequired={false}/>
-          <Router path={'/api/login'} component={<LogIn/>} logRequired={false}/>
-          <Route exact path={'/api/posts/:id'}>
+          <Router path={'/blog-front/signup'} component={<SignUp/>} logRequired={false}/>
+          <Router path={'/blog-front/login'} component={<LogIn/>} logRequired={false}/>
+          <Route exact path={'/blog-front/posts/:id'}>
             <PostPage/>
           </Route>
-          <Router path={'/api/posts/edit/:id'} component={<PostEdit/>} logRequired={true}/>
-          <Router path={'/api/unpublished/:id'} component={<PostList getData={getUnpublishedList}/>} logRequired={true}/>
-          <Router path={'/api/comments/edit/:id'} component={<EditComment/>} logRequired={true}/>
-          <Route path="/"> 
+          <Router path={'/blog-front/posts/edit/:id'} component={<PostEdit/>} logRequired={true}/>
+          <Router path={'/blog-front/unpublished/:id'} component={<PostList getData={getUnpublishedList}/>} logRequired={true}/>
+          <Router path={'/blog-front/comments/edit/:id'} component={<EditComment/>} logRequired={true}/>
+          <Route path="/blog-front/"> 
             <Home/>
           </Route>
         </Switch>

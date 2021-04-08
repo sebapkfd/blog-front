@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory} from 'react-router-dom';
 import { logInCall } from '../functions/userCalls';
+import verifySession from '../functions/verify';
 
 const LogIn = () => {
     const [username, setUsername] = useState('');
@@ -11,7 +12,9 @@ const LogIn = () => {
         e.preventDefault();
         const body = {username, password}
         await logInCall(body);
-        history.push('/');
+        if(verifySession()) {
+            history.push('/blog-front/');
+        }
         window.location.reload();
     }
 

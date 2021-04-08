@@ -19,9 +19,11 @@ export const logInCall = async (body) => {
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(body)
         })
-        const data = await response.json();
-        const {user, token} = data;
-        localStorage.setItem('userSession', JSON.stringify({user, token}))
+        if(response.status === 200) {
+            const data = await response.json();
+            const {user, token} = data;
+            localStorage.setItem('userSession', JSON.stringify({user, token}))
+        }
     } catch (err) {
         console.log(err)
     }

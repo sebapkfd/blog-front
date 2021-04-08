@@ -16,7 +16,7 @@ const PostItem = (props) => {
     }
 
     const title = (useLink) ? (
-        <Link to={`/api/posts/${post._id}`}>
+        <Link to={`/blog-front/posts/${post._id}`}>
             <h2>{post.title}</h2>
         </Link>
     ) : (
@@ -41,7 +41,7 @@ const PostItem = (props) => {
             <Options 
                 post={post} 
                 deleteFunction={deleteData}
-                refLink={`/api/posts/edit/${post._id}`}
+                refLink={`/blog-front/posts/edit/${post._id}`}
             />
         </div>
     )

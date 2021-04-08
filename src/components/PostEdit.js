@@ -20,7 +20,7 @@ const PostEdit = () => {
         e.preventDefault();
         const body = {title, text, user: post.user, timestamp: post.timestamp, published: isPublished}
         await updatePost(body, id);
-        history.push('/');
+        history.push('/blog-front/');
     }
 
     useEffect(() => {

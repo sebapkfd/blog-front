@@ -7,7 +7,7 @@ const Router = (props) => {
 
     return (
         <Route exact path={path}>
-            {verifySession() === logRequired ? component : <Redirect to='/'/>}
+            {verifySession() === logRequired ? component : <Redirect to='/blog-front/'/>}
         </Route>
     )
 }

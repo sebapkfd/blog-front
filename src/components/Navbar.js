@@ -7,17 +7,17 @@ const Navbar = () => {
 
     let session = (verifySession()) ? (
         <div className='session'>
-            <Link to={`/api/unpublished/:id`}>
+            <Link to={`/blog-front/unpublished/:id`}>
                 <button>Unpublished Posts</button>
             </Link>
             <LogOut/>
         </div>
     ) : (
         <div className='session'>
-            <Link to={`/api/signup`}>
+            <Link to={`/blog-front/signup`}>
                 <button>Sign Up</button>
             </Link>
-            <Link to={`/api/login`}>
+            <Link to={`/blog-front/login`}>
                 <button>Log In</button>
             </Link>
         </div>
@@ -25,7 +25,7 @@ const Navbar = () => {
 
     return (
         <div className='navbar'>
-            <Link to={'/'}>
+            <Link to={'/blog-front/'}>
                 <button>Home</button>
             </Link>
             {session}

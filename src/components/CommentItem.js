@@ -27,7 +27,7 @@ const CommentItem = (props) => {
             <Options 
                 post={comment} 
                 deleteFunction={deleteData}
-                refLink={`/api/comments/edit/${comment._id}`}
+                refLink={`/blog-front/comments/edit/${comment._id}`}
             />
         </div>
     )
