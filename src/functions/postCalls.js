@@ -1,6 +1,8 @@
+const urlApi = 'https://afternoon-hollows-49383.herokuapp.com/';
+
 export const getPostList = async () => {
     try {
-        const response = await fetch('http://localhost:5000/api/posts', {
+        const response = await fetch(urlApi + 'api/posts', {
             method: 'GET',
             headers: {"Content-Type": "application/json"},
         })
@@ -15,7 +17,7 @@ export const getPostList = async () => {
 export const getUnpublishedList = async () => {
     try {
         const id = JSON.parse(localStorage.getItem('userSession')).user._id
-        const response = await fetch('http://localhost:5000/api/unpublished/' + id, {
+        const response = await fetch(urlApi + 'api/unpublished/' + id, {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json",
@@ -32,7 +34,7 @@ export const getUnpublishedList = async () => {
 
 export const getPost = async (id) => {
     try {
-        const response = await fetch('http://localhost:5000/api/posts/' + id, {
+        const response = await fetch(urlApi + 'api/posts/' + id, {
             method: 'GET',
             headers: {"Content-Type": "application/json"}
         })
@@ -45,7 +47,7 @@ export const getPost = async (id) => {
 
 export const updatePost = async (body, id) => {
     try {
-        await fetch('http://localhost:5000/api/posts/edit/'+ id, {
+        await fetch(urlApi + 'api/posts/edit/'+ id, {
             method: 'PUT',
             headers: {
                 "Content-Type": "application/json",
@@ -60,7 +62,7 @@ export const updatePost = async (body, id) => {
 
 export const deletePost = async (id) => {
     try {
-        await fetch('http://localhost:5000/api/posts/:' + id, {
+        await fetch(urlApi + 'api/posts/:' + id, {
             method: 'DELETE',
             headers: {
                 "Content-Type": "application/json",
@@ -75,7 +77,7 @@ export const deletePost = async (id) => {
 
 export const createPost = async (body) => {
     try {
-        await fetch('http://localhost:5000/api/posts', {
+        await fetch(urlApi + 'api/posts', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",

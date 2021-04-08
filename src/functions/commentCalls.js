@@ -1,9 +1,11 @@
+const urlApi = 'https://afternoon-hollows-49383.herokuapp.com/';
+
 export const createComment = async (text, post) => {
     const user = JSON.parse(localStorage.getItem('userSession')).user._id;
     const timestamp = new Date().toLocaleString();
     const body = {user, timestamp, text, post}
     try {
-        await fetch('http://localhost:5000/api/comments', {
+        await fetch( urlApi + 'api/comments', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
@@ -18,7 +20,7 @@ export const createComment = async (text, post) => {
 
 export const deleteComment = async (id) => {
     try {
-        await fetch('http://localhost:5000/api/comments/:' + id, {
+        await fetch( urlApi + 'api/comments/:' + id, {
             method: 'DELETE',
             headers: {
                 "Content-Type": "application/json",
@@ -34,7 +36,7 @@ export const deleteComment = async (id) => {
 export const updateComment = async (text, comment, id) => {
     try {
         const body = {text, user: comment.user, timestamp: comment.timestamp, post: comment.post}
-        await fetch('http://localhost:5000/api/comments/edit/'+ id, {
+        await fetch( urlApi + 'api/comments/edit/'+ id, {
             method: 'PUT',
             headers: {
                 "Content-Type": "application/json",
@@ -49,7 +51,7 @@ export const updateComment = async (text, comment, id) => {
 
 export const getComment = async (id) => {
     try {
-        const response = await fetch('http://localhost:5000/api/comments/' + id, {
+        const response = await fetch( urlApi + 'api/comments/' + id, {
             method: 'GET',
             headers: {"Content-Type": "application/json"}
         })

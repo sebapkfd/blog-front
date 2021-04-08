@@ -1,6 +1,8 @@
+const urlApi = 'https://afternoon-hollows-49383.herokuapp.com/';
+
 export const signUpCall = async (body) => {
     try {
-        await fetch('http://localhost:5000/api/signup', {
+        await fetch( urlApi + 'api/signup', {
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(body)
@@ -12,7 +14,7 @@ export const signUpCall = async (body) => {
 
 export const logInCall = async (body) => {
     try {
-        const response = await fetch('http://localhost:5000/api/login', {
+        const response = await fetch( urlApi + 'api/login', {
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(body)
