@@ -2,9 +2,11 @@ import React from 'react';
 import Options from './Options';
 import { Link, useHistory } from 'react-router-dom';
 import { deletePost } from '../functions/postCalls';
+import formatDate from '../functions/formatDate';
 
 const PostItem = (props) => {
     const {post, useLink} = props;
+    const postDate = formatDate(post.timestamp);
     const history = useHistory();
 
     const deleteData = async (e) => {
@@ -28,7 +30,7 @@ const PostItem = (props) => {
             </div>
             <div className='post-item__info'>
                 <span>
-                    <p>Posted at {post.timestamp}, by {post.user.username}</p>
+                    <p>Posted at {postDate}, by {post.user.username}</p>
                 </span>
             </div>
             <div className='post-item__text'>
